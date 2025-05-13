@@ -18,7 +18,7 @@ export default function Login() {
       <main className="w-full max-w-md rounded-2xl bg-white p-8 shadow-xl">
         <div className="mb-6 text-center">
           <h1 className="text-3xl font-bold text-green-600">👨‍🍳 Chef Social Media</h1>
-          <p className="mt-1 text-gray-600">Welcome back! Please log in below.</p>
+          <p className="mt-1 text-gray-600 font-semibold">Welcome back! Please log in below.</p>
         </div>
 
         {message && (
@@ -29,7 +29,7 @@ export default function Login() {
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="email" className="block text-sm font-medium text-gray-900">
               Email address
             </label>
             <input
@@ -44,7 +44,7 @@ export default function Login() {
           </div>
 
           <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="password" className="block text-sm font-medium text-gray-900">
               Password
             </label>
             <input
