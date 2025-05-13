@@ -6,7 +6,7 @@ export async function POST(request: Request) {
 	const db = new Database('database.sqlite') //temp, TODO: use ORM
 	const users = db.prepare('SELECT * FROM users WHERE email = ? AND password = ?').all(
 		params.email,
-		bcrypt.hash(params.password, 1) //1 for performance, higher for prod
+		await bcrypt.hash(params.password, 1) //1 for performance, higher for prod
 	)
 
 	if(users && users.length == 1){

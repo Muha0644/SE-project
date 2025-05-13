@@ -7,9 +7,13 @@ export default function Login() {
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setMessage(`Logged in as: ${email}`);
+    const data = await fetch('/api/login', {
+      method: "POST",
+			body: JSON.stringify({email: email, password: password})
+    })
+    setMessage(`${await data.text()}`);
     console.log({ email, password });
   };
 
